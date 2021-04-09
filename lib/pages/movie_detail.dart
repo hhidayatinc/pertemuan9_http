@@ -17,74 +17,79 @@ class MovieDetail extends StatelessWidget {
       path =
           'https://images.freeimages.com/images/large-previews/5eb/movie-clapboard-1184339.jpg';
     }
-    double height = MediaQuery.of(context).size.height;
+
     return Scaffold(
-      backgroundColor: Colors.black12,
-      appBar: AppBar(
-        title: Text("Movie Detail"),
-        leading: new IconButton(
+        appBar: AppBar(
+          title: Text(movie.title),
+          leading: new IconButton(
             icon: new Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.pop(context);
             },
           ),
         ),
-      // mainAxisAlignment: MainAxisAlignment.start,
-      // crossAxisAlignment: CrossAxisAlignment.start,
-      body: SingleChildScrollView(
-        
-        padding: EdgeInsets.only(top :30),
-        
-        child: Center(
-          
-          child: Column(children: [
-            
-            Container(
-              
-              
-              width: 250,
-              height: height / 1.9,
-              child: Image.network(path),
-          
-              
-            ),
-            
-            Container(
-              child: Column(
-                children: [
-                   Container(
-               padding: EdgeInsets.only(right: 20, left: 20, top: 10),
-               child: Text(movie.title + " / " + movie.voteAverage.toString(), 
-               style: TextStyle(
-                 fontSize: 20,fontWeight: FontWeight.w500, color: Colors.white)
-                 ),
-             ),
-             
-             Container(
-               padding: EdgeInsets.only(left: 30, right: 30, top: 20),
-               child: Text(movie.overview, 
-               style: TextStyle(
-                 fontSize: 16, color: Colors.white)
-                 ),
-             ),
-                  
-                ],
-            ),)
-            
-          ],
+        body: Container(
+          child: Column(
+            children: [
+              Container(
+                padding: EdgeInsets.only(top: 30, bottom: 10),
+                child: Image.network(path, scale: 3),
+              ),
+              Container(
+                padding: EdgeInsets.all(20),
+                child: Column(
+                  children: [
+                    Container(
+                      child: Text(
+                        movie.title,
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      child: Row(
+                        children: [
+                          Container(
+                            child: Column(
+                              children: [
+                                Container(
+                                  child: Text('Ratings : '),
+                                ),
+                                Container(
+                                  child: Text(movie.voteAverage.toString()),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            child: Column(
+                              children: [
+                                Container(
+                                  child: Text('Release date : '),
+                                ),
+                                Container(
+                                  child: Text(movie.releaseDate),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      child: Text(
+                        movie.overview,
+                        style: TextStyle(fontSize: 15),
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
           ),
-            
-            
-                
-          
-          
-        ),
-        
-      // Container(
-      //           child: Text(movie.overview),
-      //           padding: EdgeInsets.only(left: 16, right: 16),
-      //         )
-    )
-    );
+        ));
   }
 }

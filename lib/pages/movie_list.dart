@@ -34,7 +34,7 @@ class MovieList extends StatefulWidget{
   Widget build(BuildContext context) {
   
     return Scaffold(
-      backgroundColor: Colors.black,
+   
       appBar: AppBar(title: Text("Popular Movies"),
       ),
       body: ListView.builder(
@@ -42,7 +42,7 @@ class MovieList extends StatefulWidget{
         itemBuilder: (context, int position){
           return Card(
             
-            color : Colors.white54,
+            color : Colors.white,
             elevation: 3.0,
             child: ListTile(
               leading: Image.network('https://image.tmdb.org/t/p/w500/' +
@@ -50,15 +50,13 @@ class MovieList extends StatefulWidget{
                   
               title:Text(movies[position].title, 
               style: TextStyle(
-                color: Colors.white, 
-                fontWeight: FontWeight.w600, 
+                fontWeight: FontWeight.w500, 
                 fontSize: 18,) ,),
               subtitle: Text(
-                'Rating = ' + movies[position].voteAverage.toString(), 
+                'Ratings = ' + movies[position].voteAverage.toString(), 
                 style: TextStyle(
-                  color: Colors.white, 
-                  fontSize: 15,
-                  fontStyle: FontStyle.italic)
+                  fontSize: 16,
+                  )
               ),
               onTap: () {
                 MaterialPageRoute route = MaterialPageRoute(
