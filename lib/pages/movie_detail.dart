@@ -47,7 +47,7 @@ class MovieDetail extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(10),
+                      padding: EdgeInsets.all(4),
                       child: Row(
                         children: [
                           Container(
@@ -63,7 +63,7 @@ class MovieDetail extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            padding: EdgeInsets.all(10),
+                            padding: EdgeInsets.all(4),
                             child: Column(
                               children: [
                                 Container(
@@ -79,10 +79,10 @@ class MovieDetail extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(10),
+                      padding: EdgeInsets.all(4),
                       child: Text(
                         movie.overview,
-                        style: TextStyle(fontSize: 15),
+                        //style: TextStyle(fontSize: 15),
                       ),
                     )
                   ],
