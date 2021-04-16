@@ -19,6 +19,7 @@ class MovieDetail extends StatelessWidget {
     }
 
     return Scaffold(
+      //backgroundColor: Colors.black,
         appBar: AppBar(
           title: Text(movie.title),
           leading: new IconButton(
@@ -32,11 +33,11 @@ class MovieDetail extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.only(top: 30, bottom: 10),
+                padding: EdgeInsets.only(top: 30),
                 child: Image.network(path, scale: 3),
               ),
               Container(
-                padding: EdgeInsets.all(20),
+                padding: EdgeInsets.all(30),
                 child: Column(
                   children: [
                     Container(
@@ -47,7 +48,7 @@ class MovieDetail extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(4),
+                      padding: EdgeInsets.all(5),
                       child: Row(
                         children: [
                           Container(
@@ -63,7 +64,7 @@ class MovieDetail extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            padding: EdgeInsets.all(4),
+                            padding: EdgeInsets.all(5),
                             child: Column(
                               children: [
                                 Container(
@@ -79,7 +80,7 @@ class MovieDetail extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(4),
+                      padding: EdgeInsets.all(5),
                       child: Text(
                         movie.overview,
                         //style: TextStyle(fontSize: 15),

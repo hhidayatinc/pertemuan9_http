@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:katalog_film/pages/movie_list.dart';
+import 'package:katalog_film/pages/movie_list_playing.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,21 +11,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
-      ),
-      home: MyHomePage(),
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => PlayingMovieList(),
+        '/popular': (context) => MovieList(),
+      },
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MovieList();
-  }
-}
+
 
 
 

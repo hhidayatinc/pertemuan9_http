@@ -3,23 +3,23 @@
 import 'package:flutter/material.dart';
 import 'package:katalog_film/helper/http_service.dart';
 import 'package:katalog_film/pages/main_drawer.dart';
-
+import 'package:flutter/widgets.dart';
 import 'movie_detail.dart';
 
-class MovieList extends StatefulWidget{
+class PlayingMovieList extends StatefulWidget{
   @override
-  _MovieListState createState() => _MovieListState();
+  _PlayingMovieListState createState() => _PlayingMovieListState();
   
   }
   
-  class _MovieListState extends State<MovieList> {
+  class _PlayingMovieListState extends State<PlayingMovieList> {
     List movies;
     int movieCount;
     HttpService service;
 
     Future initialize() async {
       movies = [];
-      movies = await service.getPopularMovies();
+      movies = await service.getTopRatedMovies();
       setState(() {
         movieCount = movies.length;
         movies = movies;
@@ -36,7 +36,7 @@ class MovieList extends StatefulWidget{
   
     return Scaffold(
   //  /backgroundColor: Colors.black,
-      appBar: AppBar(title: Text("Popular Movies"),
+      appBar: AppBar(title: Text("Top Rated Movies"),
       ),
       body: GridView.builder(
        padding: EdgeInsets.all(10),

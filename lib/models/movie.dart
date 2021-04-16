@@ -1,5 +1,6 @@
 class Movie{
   int id;
+ //List<int> genreIds;
   String title;
   double voteAverage;
   String overview;
@@ -10,6 +11,7 @@ class Movie{
 
   Movie.fromJson(Map<String, dynamic> parsedJson){
     this.id = parsedJson['id'];
+    //this.genreIds = parsedJson['genreIds'];
     this.title = parsedJson['title'];
     this.releaseDate = parsedJson['release_date'];
     this.voteAverage = parsedJson['vote_average'] * 1.0;
